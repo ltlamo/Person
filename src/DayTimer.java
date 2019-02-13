@@ -1,15 +1,15 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class DayTimer implements WhoDoneIt, Organizer {
 
-    List<Person> ls = new ArrayList<Person>();
+    List<Person> ls = new ArrayList<>();
+    Set<Person> set = new HashSet<Person>(ls);
 
     @Override
     public void add(Person p) {
-        ls.add(p);
+        set.add(p);
+        ls.clear();
+        ls.addAll(set);
     }
 
     @Override
@@ -42,10 +42,12 @@ public class DayTimer implements WhoDoneIt, Organizer {
     public Person findByEmail(String email) {
         for(Person checkedPerson : this.ls){
             if(checkedPerson.getEmail().equals(email)){
+                System.out.println(checkedPerson);
                 return checkedPerson;
             }
         }
         return null;
+
     }
 
     @Override
@@ -69,11 +71,12 @@ public class DayTimer implements WhoDoneIt, Organizer {
 
     @Override
     public Person getAuthor() {
-        return null;
+        return new Person("Roma", "Romaniuk", "out1aw@yahoo.com", "(858)-353-5142");
+
     }
 
     public void printAll(){
-        for(Person a : this.ls){
+        for(Person a : ls){
             System.out.println(a);
         }
     }

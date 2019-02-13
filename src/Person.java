@@ -92,34 +92,37 @@ public class Person {
 
 
         DayTimer dt = new DayTimer();
-        dt.add(me);
-        dt.add(test);
+        dt.add(new Person("aaa", "aaa", "aaa@aaa.com", "1111111"));
+        dt.add(new Person("zzz", "zzz", "zzz@zzz.com", "6666666"));
+        dt.add(new Person("ddd", "ddd", "ddd@ddd.com", "4444444"));
+        dt.add(new Person("ccc", "ccc", "ccc@ccc.com", "3333333"));
+        dt.add(new Person("ooo", "bbb", "ooo@ooo.com", "5498439"));
+        dt.add(new Person("bbb", "bbb", "bbb@bbb.com", "2222222"));
+        dt.add(new Person("yyy", "yyy", "yyy@yyy.com", "5555555"));
+        dt.add(new Person("yyy", "yyy", "yyy@yyy.com", "5555555"));
+        dt.add(new Person("yyy", "yyy", "yyy@yyy.com", "5555555"));
+        dt.add(new Person("yyy", "yyy", "yyy@yyy.com", "5555555"));
+        dt.add(new Person("yyy", "yyy", "yyy@yyy.com", "5555555"));
+        dt.add(new Person("yyy", "yyy", "yyy@yyy.com", "5555555"));
 
-        dt.remove("out1aw@yahoo.com");
-        dt.add(new Person("Lol", "Kek", "lolkek@kek.com", "1234"));
-        dt.add(new Person("Abc", "Yzx", "123@kek.com", "1234"));
-        dt.add(new Person("Olyh", "Kek", "434@kek.com", "1234"));
+        dt.getSize();
         dt.printAll();
-//        dt.empty();
-//        System.out.println();
-//        System.out.println();
-//        System.out.println("wo tam ");
-//        dt.printAll();
-
         System.out.println();
-        System.out.println();
-        System.out.println("sorted");
-
         dt.getSortedListByLastName();
         dt.printAll();
         System.out.println();
-        dt.getSortedListByFirstName();
-        dt.printAll();
+        System.out.println(dt.getAuthor());
         System.out.println();
-        System.out.println("find by last name");
-        dt.find("Kek");
+        dt.findByEmail("yyy@yyy.com");
+        System.out.println();
+        dt.find("bbb");
+        System.out.println();
 
-        dt.getSize();
+
+
+
+
+
 
 
 
