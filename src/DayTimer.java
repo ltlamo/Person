@@ -4,14 +4,10 @@ import java.util.stream.Collectors;
 public class DayTimer implements WhoDoneIt, Organizer {
 
     List<Person> ls = new ArrayList<>();
-//    Set<Person> set = new HashSet<Person>(ls);
+
 
     @Override
     public void add(Person p) {
-//        set.add(p);
-//        ls.clear();
-//        ls.addAll(set);
-
         ls.add(p);
         ls=ls.stream().distinct().collect(Collectors.toList());
     }
